@@ -1,0 +1,104 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Main container */
+.main-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Heading styles */
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.table-heading {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin-top: 20px;
+}
+
+/* Table container */
+.table-container {
+  margin-bottom: 40px;
+}
+
+/* Table styles */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.styled-table th {
+  background-color: #2c3e50;
+  color: #fff;
+}
+
+.styled-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.styled-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.styled-table td {
+  font-size: 14px;
+}
+
+/* Category header styles */
+.category-header {
+  background-color: #ecf0f1;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Error and loading messages */
+p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #e74c3c;
+}
+.pdf-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pdf-button:hover {
+  background-color: #0056b3;
+}
+
+
+.main-container {
+  margin: 20px;
+}
+
+.table-container {
+  margin: 20px 0;
+}
