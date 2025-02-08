@@ -1,0 +1,88 @@
+/* Table container for proper alignment and spacing */
+.table-container {
+    width: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+  
+  /* Table heading styles */
+  .table-heading {
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the table */
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are merged */
+    margin-top: 20px;
+    font-size: 14px; /* Adjust font size */
+    text-align: left; /* Align text to the left */
+    box-sizing: border-box;
+  }
+  
+  /* Table header cell styles */
+  .styled-table th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Table body cell styles */
+  .styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  /* Hover effect for table rows */
+  .styled-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Alternating row colors for better readability */
+  .styled-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Category or group headers */
+  .category-header {
+    font-weight: bold;
+    background-color: #f4f7fa;
+    text-align: left;
+  }
+  
+  /* Table footer styling if you have one */
+  .styled-table tfoot {
+    background-color: #f4f7fa;
+  }
+  
+  .styled-table tfoot td {
+    font-weight: bold;
+    text-align: right;
+    padding: 10px;
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    .styled-table {
+      font-size: 12px; /* Adjust font size for smaller screens */
+    }
+  
+    .styled-table th,
+    .styled-table td {
+      padding: 8px 10px; /* Reduce padding for smaller screens */
+    }
+  
+    .table-container {
+      padding: 15px;
+    }
+  }
+  

@@ -1,0 +1,61 @@
+/* Navbar Styling */
+.navbar {
+  background-color: #f8f9fa; /* Light grey background for a clean look */
+  padding: 15px 20px; /* Adequate padding for spacing */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 20px; /* Space below the navbar */
+  display: flex;
+  align-items: center; /* Vertically align items */
+  justify-content: flex-start; /* Align content to the left */
+}
+
+.navbar .container-fluid {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: flex-start; /* Align content to the left */
+}
+
+.navbar img {
+  width: 75px; /* Logo width */
+  height: auto;
+}
+
+h1 {
+  font-family: 'Times New Roman', Times, serif; /* Updated font family */
+  color: #333; /* Dark grey for text to maintain contrast */
+  font-size: 28px;
+  margin-left: 15px; /* Space between the logo and text */
+  font-weight: 600; /* Bold text for emphasis */
+  margin-bottom: 0; /* Remove any extra space below the heading */
+  transform: translateY(-10px); /* Move the text slightly higher */
+}
+
+/* Adjustments for Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-left: 10px;
+  }
+
+  .navbar img {
+    width: 60px; /* Slightly smaller logo on mobile */
+  }
+}
+
+/* Styling for logo text */
+.navbar span {
+  font-family: 'Times New Roman', Times, serif; /* Updated font family */
+  font-size: 1.5rem; /* Adjust text size */
+  color: #333; /* Dark grey text color */
+  font-weight: 600; /* Bold text for emphasis */
+  margin-left: 10px;
+}
+
+/* Navbar active state with dark grey for emphasis */
+.navbar.active {
+  background-color: #dcdcdc; /* Slightly darker grey for active state */
+}

@@ -1,0 +1,177 @@
+/* Center the file input and button */
+.file-upload-container {
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Center the items vertically */
+  flex-direction: column; /* Stack the elements vertically */
+  width: 100%;
+  max-width: 500px; /* Set a max-width for the form */
+  margin: 0 auto; /* Ensure the container is centered within its parent */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin-top: 50px;
+  transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+}
+
+.file-upload-container:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Slight shadow on hover */
+}
+
+/* File input styling */
+input[type="file"] {
+  padding: 12px;
+  margin: 10px 0; /* Add spacing between the file input and the button */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #fff;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+/* File input focus */
+input[type="file"]:focus {
+  border-color: #4CAF50; /* Green border on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Upload & PDF Buttons */
+button {
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+  border: none;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Upload Button */
+button[type="submit"] {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* PDF Button */
+.pdf-button {
+  background-color: #f39c12; /* Orange background */
+  color: white;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+.pdf-button:hover {
+  background-color: #e67e22; /* Darker orange on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Disabled Button */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading Message */
+.loading-message {
+  color: #f39c12;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Upload Error Message */
+.upload-message {
+  text-align: center;
+  font-size: 16px;
+  color: #e74c3c; /* Red for error */
+  margin-top: 20px;
+}
+
+/* Success Message */
+.upload-message.success {
+  color: #27ae60; /* Green for success */
+}
+
+/* Styling for Tables */
+.table-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  overflow-x: auto;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.styled-table thead tr {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.styled-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Category Header with Proper Letter Spacing */
+.category-header {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 5px; /* Space out characters */
+  background-color: #f7f7f7;
+  border-left: 3px solid #4CAF50;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* Subcategories should be centered */
+.styled-table td.text-center,
+.styled-table th.text-center {
+  text-align: center;
+}
+
+/* Hover Effect for Table Rows */
+.styled-table tbody tr:hover {
+  background-color: #f1f1f1; /* Light gray background on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .file-upload-container {
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  .submit-form button,
+  .pdf-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}

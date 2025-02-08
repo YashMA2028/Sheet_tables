@@ -1,0 +1,96 @@
+/* Common InfoBox Styling */
+.info-box-container {
+  position: relative; /* Parent container needs relative positioning */
+  width: 100%; /* Make sure it spans the full width of the parent */
+  display: flex;
+  justify-content: space-between; /* This ensures the space between the two boxes */
+  gap: 15px;
+}
+
+.info-box {
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  background-color: #fff;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.info-box h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.info-box input,
+.info-box button {
+  display: block;
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.info-box button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.info-box button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.info-box button:active {
+  background-color: #004085;
+  transform: translateY(0);
+}
+
+/* Position the InfoBoxes using absolute positioning */
+#InfoBox1 {
+  position: absolute;
+  left: 0; /* Position InfoBox1 on the left */
+  top: 0;
+  width: 45%; /* Set width of the first box */
+}
+
+#InfoBox2 {
+  position: absolute;
+  right: 0; /* Position InfoBox2 on the right */
+  top: 0;
+  width: 45%; /* Set width of the second box */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .info-box-container {
+    flex-direction: column; /* Stack the boxes vertically on small screens */
+  }
+
+  #InfoBox1, #InfoBox2 {
+    position: relative;
+    width: 90%; /* Adjust width for mobile devices */
+    margin: 0 auto;
+  }
+}

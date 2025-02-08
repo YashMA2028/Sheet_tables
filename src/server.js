@@ -1,53 +1,60 @@
-const express = require('express');
-const { MongoClient } = require('mongodb');
-const cors = require('cors');
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const cors = require("cors"); // ✅ Import CORS
 
-// Initialize the express app
 const app = express();
 
-// Enable CORS for your frontend
-app.use(cors());
+// ✅ Enable CORS for frontend access
+app.use(cors({ origin: "http://localhost:3000" })); 
 
-// MongoDB connection URI
-const uri = 'mongodb://localhost:27017';  // Update with your MongoDB connection string if different
+app.use(bodyParser.json());
 
-// Database and collection
-const dbName = 'Janakalyan_Bank';
-const collectionName = 'Trial-1';
+mongoose.connect("mongodb://localhost:27017/Janakalyan_Bank", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-// MongoDB client
-const client = new MongoClient(uri);
+// Function to get a dynamic collection per user
+const getUserCollection = (userId) => {
+  return mongoose.connection.collection(userId);
+};
 
-app.get('/api/data', async (req, res) => {
+// Save user data
+app.post("/save_to_mongo/", async (req, res) => {
+  const { userId, data } = req.body;
+
+  if (!userId || !data) {
+    return res.status(400).json({ message: "User ID and data are required." });
+  }
+
   try {
-    // Connect to MongoDB
-    await client.connect();
-    console.log('Connected to MongoDB');
+    const userCollection = getUserCollection(userId);
+    const timestamp = new Date().toISOString();
 
-    // Get the database and collection
-    const db = client.db(dbName);
-    const collection = db.collection(collectionName);
+    const record = { _id: timestamp, data, timestamp: new Date() };
+    await userCollection.insertOne(record);
 
-    // Fetch the data from the collection
-    const data = await collection.find({}).toArray();
-
-    // If data exists, return the first document (assuming it's an array of data)
-    if (data.length > 0) {
-      res.json(data[0]);  // Adjust based on your data structure
-    } else {
-      res.status(404).json({ message: 'No data found in the database' });
-    }
+    res.status(200).json({ message: "Data saved successfully", recordId: timestamp });
   } catch (error) {
-    console.error('Error fetching data:', error);
-    res.status(500).json({ message: 'Failed to fetch data from database' });
-  } finally {
-    // Close the connection
-    await client.close();
+    res.status(500).json({ message: "Error saving data", error });
   }
 });
 
-// Start the server
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+// Get user records
+app.get("/get_user_records/:userId", async (req, res) => {
+  const { userId } = req.params;
+
+  try {
+    const userCollection = getUserCollection(userId);
+    const records = await userCollection.find({}).toArray();
+
+    res.status(200).json(records);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching records", error });
+  }
+});
+
+app.listen(5000, () => {
+  console.log("Server is running on port 5000");
 });
